@@ -1,0 +1,253 @@
+@charset "utf-8";
+$color-text :#888888;
+$color-title:#202124;
+$color-catch:#FA6980;
+$color-accent: #bbbbbb;
+$color-bg:#F6F6F6;
+$color-main:#FA6980;
+
+
+@mixin inner ($w: 800px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+    max-width: $w;
+}
+
+@mixin flex ($a:stretch, $j:space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin py($y: 60px) {
+    padding: $y 0;
+}
+
+@mixin title-main {
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: (31/24);
+    color: $color-title;
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 10px solid #FA6980;
+}
+
+/* BASE
+------------------------*/
+body {
+    color: $color-text;
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: (24/14);
+    letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* BLOCK
+------------------------*/
+/* header */
+.header {
+    @include py(30px);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*footer*/
+.footer {
+    padding: 100px 0 40px;
+    background-color: $color-title;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__copy {
+        color: $color-accent;
+        font-size: 12px;
+    }
+}
+
+
+
+/*unit*/
+.unit {
+    &__catch {
+        margin-bottom: 10px;
+        color: $color-catch;
+        font-size: 12px;
+        font-style: oblique;
+        line-height: (20/12);
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: (23/18);
+        color: $color-title;
+    }
+
+    &--border {
+        border-bottom: #DDDDDD solid 1px;
+    }
+}
+
+/*card*/
+.card {
+    background-color: #fff;
+
+    &__body {
+        padding: 35px;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: (23/18);
+        color: $color-title;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/*time*/
+.time {
+    margin-top: 20px;
+    padding-left: 26px;
+    color: $color-accent;
+    font-size: 12px;
+    background: url(../images/icon_time.png) no-repeat left center;
+}
+
+/*btn*/
+.btn {
+    display: block;
+    width: 160px;
+    margin-top: 25px;
+    margin-left: auto;
+    padding: 14px;
+    background-color: $color-main;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &--info {
+        background: $color-title;
+    }
+}
+
+
+
+/* INDEX
+------------------------*/
+/*news*/
+.news {
+    @include py();
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__list {
+        @include flex();
+        margin-bottom: -60px;
+    }
+
+    &__item {
+        width: (380/800)*100%;
+        margin-bottom: 60px;
+    }
+}
+
+/*trending*/
+.trending {
+    @include py();
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__item {
+        width: (380/800)*100%;
+    }
+
+    &__list {
+        @include flex();
+    }
+}
+
+/* ABOUT
+------------------------*/
+/*post*/
+.post {
+    @include py();
+
+    &__inner {
+        @include inner();
+    }
+
+    &__item {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+/*discovery*/
+.discovery {
+    @include py();
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__item {
+        width: (240/800)*100%;
+    }
+
+    &__list {
+        @include flex();
+    }
+}
